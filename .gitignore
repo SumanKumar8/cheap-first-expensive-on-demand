@@ -1,9 +1,20 @@
-# python
+# ===== Only this project's real files are tracked =====
+# Ignore everything at the project root, then re-include just the repo content.
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/CITATION.cff
+!/repository/
+!/Hierarchical-Model-SNN-main/
+
+# Never track the quarantined raw data (~44 GB) or build/python junk
+/_TO_DELETE/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 .DS_Store
-# regenerable build cache (final pools are tracked, per-class cache is not)
 repository/results/_cache/
-# quarantined raw data (not part of the repo)
-_TO_DELETE/
+
+# stray probe files
+.write_test
