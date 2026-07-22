@@ -1,6 +1,6 @@
-# Golden-model fidelity: retrained RF vs shipped epsilon_thrs.npz
+# Golden-model fidelity: retrained RF vs shipped per-neuron margins
 
-| dataset | metric | mean |rel MAE err| vs Paper-1 shipped |
+| dataset | metric | mean rel. MAE err |
 |---|---|---|
 | FMNIST | isi | 4.6% |
 | FMNIST | cv | 2.2% |

@@ -1,7 +1,7 @@
-# Cheap-First / Expensive-on-Demand — reproducible pipeline
+# Cheap-First / Expensive-on-Demand -- reproducible pipeline
 
-Runs the paper's experiments on the QUANTISENC fault-injection data: E1 detector
-comparison, E2 conditioning, E3 cascade cost, Stage-2 Victor–Purpura / van Rossum
+Runs the escalation experiments on the QUANTISENC fault-injection data: E1 detector
+comparison, E2 conditioning, E3 cascade cost, Stage-2 Victor-Purpura / van Rossum
 confirmation, fault-effect breakdown, and drift / cross-distribution robustness.
 
 ## Reproduce from the shipped cache (no raw data needed)
@@ -27,19 +27,19 @@ Outputs land in `results/`.
 ## Rebuild the pools from raw data (optional)
 
 Only needed to re-derive `results/real_pools_*.npz` from scratch. Set
-`SNN_ARTIFACTS` to the Paper-1 `Hierarchical-Model-SNN-main/artifacts/` release and
-run `python build_pools.py <dataset> 0 9 && python build_pools.py <dataset> merge`
-per dataset. The small Nominal/injected spike files that Stage-2 needs are already
-bundled under `../Hierarchical-Model-SNN-main/artifacts/`.
+`SNN_ARTIFACTS` to the prior work's `Hierarchical-Model-SNN-main/artifacts/` release
+(DSN 2025) and run `python build_pools.py <dataset> 0 9 && python build_pools.py
+<dataset> merge` per dataset. The small Nominal/injected spike files that Stage-2 needs
+are already bundled under `../Hierarchical-Model-SNN-main/artifacts/`.
 
 ## Files
 
-- `config.py` — resolves the artifacts path (`SNN_ARTIFACTS`) and the `results/` dir.
-- `src/` — `detectors.py` (CUSUM/EWMA + ARL calibration), `eval_utils.py` (AUROC),
+- `config.py` -- resolves the artifacts path (`SNN_ARTIFACTS`) and the `results/` dir.
+- `src/` -- `detectors.py` (CUSUM/EWMA + ARL calibration), `eval_utils.py` (AUROC),
   `metrics_cost.py` (S/(1+pS) cost model), `realdata.py` (residual-stream loader).
-- `real_experiments.py` — E1 / E2 / E3.
-- `run_stage2_datasets.py` — Stage-2 VP/VR for all three datasets (Table V).
-- `e4_stage2_vpvr.py` — MNIST-only Stage-2 (full-schema, used by `stats_support.py`).
+- `real_experiments.py` -- E1 / E2 / E3.
+- `run_stage2_datasets.py` -- Stage-2 VP/VR for all three datasets.
+- `e4_stage2_vpvr.py` -- MNIST-only Stage-2 (full-schema, used by `stats_support.py`).
 - `e5_drift.py`, `fault_breakdown.py`, `stats_support.py`, `make_report.py`.
-- `build_pools.py` — raw spikes → per-neuron residual pools.
-- `results/` — cached pools, result JSONs, `tables/`, `figures/`.
+- `build_pools.py` -- raw spikes -> per-neuron residual pools.
+- `results/` -- cached pools, result JSONs, `tables/`, `figures/`.

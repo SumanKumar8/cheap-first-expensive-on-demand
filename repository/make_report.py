@@ -31,7 +31,7 @@ for ds in DS:
     e2 = load(f"{R}/e2_real_{ds}.json")
     if e2: M["e2"][ds] = e2
 
-# ---- golden MAE fidelity: retrained RF vs Paper-1 shipped margins ----
+# ---- golden MAE fidelity: retrained RF vs shipped per-neuron margins ----
 # epsilon_thrs.npz holds the shipped margins; if absent (cache-only repo)
 # fall back to results/golden_shipped.json (same values, cached).
 _shipped_cache = load(f"{R}/golden_shipped.json") or {}
@@ -80,23 +80,23 @@ for ds in DS:
         if e: r3.append(f"| {DSL[ds]} | {m} | {e['stage1_recall']:.2f} | {e['cascade_recall']:.2f} | {e['mean_latency']} | {e['false_escalation_rate']*100:.2f}% | {e['flag_rate_once']*100:.2f}% | {e['savings_once']:.1f}x | {e['flag_rate']*100:.1f}% | {e['savings_vs_vp']:.1f}x |")
 w(f"{TAB}/table_e3.md", "# E3 -- Cheap-first cascade cost (real, model-free stage-1, S=15)\n\n"+"\n".join(r3)+"\n")
 # golden
-rg = ["| dataset | metric | mean |rel MAE err| vs Paper-1 shipped |","|---|---|---|"]
+rg = ["| dataset | metric | mean rel. MAE err |","|---|---|---|"]
 for ds in DS:
     for m in MET: rg.append(f"| {DSL[ds]} | {m} | {M['golden'][ds][m]['mean_rel_err']*100:.1f}% |")
-w(f"{TAB}/table_golden.md", "# Golden-model fidelity: retrained RF vs shipped epsilon_thrs.npz\n\n"+"\n".join(rg)+"\n")
+w(f"{TAB}/table_golden.md", "# Golden-model fidelity: retrained RF vs shipped per-neuron margins\n\n"+"\n".join(rg)+"\n")
 
 # ---- figures ----
 C = {"pw":"#c44","cusum":"#3a7","ml":"#37b","raw":"#888","lin":"#3a7"}
 # fig E1: latency + AUROC (muISI) across datasets
 fig, ax = plt.subplots(1, 2, figsize=(12, 4.4)); x = np.arange(len(DS)); wd = 0.38
 pwl = [M["e1_head"][d]["isi"]["pw_lat"] for d in DS]; cul = [M["e1_head"][d]["isi"]["cusum_lat"] for d in DS]
-ax[0].bar(x-wd/2, pwl, wd, label="per-window (Paper 1)", color=C["pw"])
+ax[0].bar(x-wd/2, pwl, wd, label="per-window (baseline)", color=C["pw"])
 ax[0].bar(x+wd/2, cul, wd, label="CUSUM (cheap-first)", color=C["cusum"])
 for i, d in enumerate(DS): ax[0].text(i, max(pwl[i],cul[i])+0.4, f"{M['e1_head'][d]['isi']['speedup']:.1f}x", ha="center", fontsize=9, fontweight="bold")
 ax[0].set_xticks(x); ax[0].set_xticklabels([DSL[d] for d in DS]); ax[0].set_ylabel("detection latency (windows)")
 ax[0].set_title("Stage-1 latency (muISI) @ matched ARL0=200"); ax[0].legend()
 pwa = [M["e1_head"][d]["isi"]["pw_auroc"] for d in DS]; cua = [M["e1_head"][d]["isi"]["cusum_auroc"] for d in DS]
-ax[1].bar(x-wd/2, pwa, wd, label="per-window (Paper 1)", color=C["pw"])
+ax[1].bar(x-wd/2, pwa, wd, label="per-window (baseline)", color=C["pw"])
 ax[1].bar(x+wd/2, cua, wd, label="CUSUM (cheap-first)", color=C["cusum"])
 ax[1].set_xticks(x); ax[1].set_xticklabels([DSL[d] for d in DS]); ax[1].set_ylim(0.5, 1.02); ax[1].set_ylabel("AU-ROC")
 ax[1].set_title("Stage-1 AU-ROC (muISI)"); ax[1].legend(loc="lower right")
@@ -129,7 +129,7 @@ for ds,col in [("fashionmnist","#37b"),("mnist","#e83"),("svhn","#2a7")]:
     for m,mk2 in [("isi","o"),("cv","s")]:
         g=M["golden"][ds][m]; a.scatter(g["shipped"], g["mine"], marker=mk2, alpha=0.7, color=col, label=f"{DSL[ds]} {m}")
 lim=[0,5]; a.plot(lim,lim,"k--",lw=0.8); a.set_xlim(0,5); a.set_ylim(0,5)
-a.set_xlabel("Paper-1 shipped val MAE"); a.set_ylabel("retrained golden-model val MAE")
+a.set_xlabel("shipped val MAE (baseline)"); a.set_ylabel("retrained golden-model val MAE")
 a.set_title("Golden-model fidelity (y=x ideal)"); a.legend(fontsize=7)
 plt.tight_layout(); plt.savefig(f"{FIG}/fig_golden_fidelity.png", dpi=130); plt.close()
 print("wrote master JSON, 4 tables, 4 figures")
