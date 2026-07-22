@@ -7,6 +7,7 @@
 !/CITATION.cff
 !/repository/
 !/Hierarchical-Model-SNN-main/
+!/quantisenc-main_neuronid/
 
 # Never track the quarantined raw data (~44 GB) or build/python junk
 /_TO_DELETE/

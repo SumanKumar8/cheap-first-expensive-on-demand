@@ -77,6 +77,13 @@ work's release (Hierarchical-Model-SNN, DSN 2025). This repo ships the **cached 
 pools** (`repository/results/real_pools_*.npz`) plus the small nominal/injected spike
 files, so every table and figure reproduces **without** the raw data.
 
+## Hardware-level simulation (QUANTISENC RTL)
+
+The `quantisenc-main_neuronid/` folder holds the QUANTISENC neuromorphic-hardware
+sources. The tables and figures above reproduce from the cached residual pools; to
+instead run the neuron model **at the hardware / RTL level** and generate the spike
+outputs yourself, run the files in that folder.
+
 ## Citation
 
 If you use this code, please cite this repository (see `CITATION.cff`) and the underlying
