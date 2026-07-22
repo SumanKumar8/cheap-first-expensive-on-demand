@@ -1,40 +1,45 @@
-# Cheap-First / Expensive-on-Demand — minimal reproducible pipeline
+# Cheap-First / Expensive-on-Demand — reproducible pipeline
 
-Runs the paper's experiments (E1 detectors, E2 conditioning, E3 cascade cost,
-Stage-2 Victor-Purpura/van Rossum, fault breakdown, drift/robustness) on the real
-QUANTISENC fault-injection data.
+Runs the paper's experiments on the QUANTISENC fault-injection data: E1 detector
+comparison, E2 conditioning, E3 cascade cost, Stage-2 Victor–Purpura / van Rossum
+confirmation, fault-effect breakdown, and drift / cross-distribution robustness.
 
-The large **`Hierarchical-Model-SNN-main`** artifacts are **not** bundled here — this
-repo only *references* them by path.
+## Reproduce from the shipped cache (no raw data needed)
 
-## Setup
-1. `pip install -r requirements.txt` (pins matter: numpy 1.23.5 / scipy 1.11.3 /
-   scikit-learn 1.2.2 — the golden model is validated against Paper-1's shipped margins).
-2. Have `Hierarchical-Model-SNN-main/artifacts/` locally (the folder containing
-   `FashionMNIST_Experiments/`, `MNIST_Experiments/`, `SVHN_Experiments/`).
+The cached residual pools are already in `results/` (`real_pools_*.npz`), so every
+table and figure regenerates without the ~37 GB of raw artifacts:
 
-## Run
-Open **`run_pipeline.ipynb`** in Jupyter, set `SNN_ARTIFACTS` in the first code cell to
-your artifacts path, and run all cells. It builds the residual pools, runs every
-experiment, generates tables + figures, verifies (24/24 checks), and displays the
-figures inline.
-
-Prefer the shell? Set the env var and call the scripts directly:
+```bash
+pip install -r requirements.txt      # numpy 1.23.5 / scipy 1.11.3 / scikit-learn 1.2.2 / matplotlib
+for ds in mnist fashionmnist svhn; do
+  for m in isi cv; do python real_experiments.py e13 $ds $m; done   # E1 detectors + E3 cascade
+  python real_experiments.py e2 $ds                                  # E2 conditioning
+done
+python run_stage2_datasets.py    # Stage-2 VP/VR: MNIST measured; FMNIST/SVHN MNIST-derived
+python e5_drift.py               # drift / cross-distribution robustness
+python fault_breakdown.py derivable
+python stats_support.py
+python make_report.py            # -> results/tables/*.md + results/figures/*.png
 ```
-export SNN_ARTIFACTS=/path/to/Hierarchical-Model-SNN-main/artifacts
-python build_pools.py fashionmnist 0 9 && python build_pools.py fashionmnist merge   # (repeat per dataset)
-python real_experiments.py e13 fashionmnist isi     # E1+E3 ; also e2 <ds>
-python e4_stage2_vpvr.py && python fault_breakdown.py derivable && python e5_drift.py
-python make_report.py && python stats_support.py && python verify_all.py
-```
+
+Outputs land in `results/`.
+
+## Rebuild the pools from raw data (optional)
+
+Only needed to re-derive `results/real_pools_*.npz` from scratch. Set
+`SNN_ARTIFACTS` to the Paper-1 `Hierarchical-Model-SNN-main/artifacts/` release and
+run `python build_pools.py <dataset> 0 9 && python build_pools.py <dataset> merge`
+per dataset. The small Nominal/injected spike files that Stage-2 needs are already
+bundled under `../Hierarchical-Model-SNN-main/artifacts/`.
 
 ## Files
-- `config.py` — resolves the artifacts path (`SNN_ARTIFACTS`) and the `results/` output dir.
-- `src/` — library: `detectors.py` (CUSUM/EWMA + ARL calibration), `eval_utils.py` (ROC/AUROC),
-  `metrics_cost.py` (S/(1+pS) cost model), `realdata.py` (residual-stream loader).
-- `build_pools.py` — raw spikes -> per-neuron residual pools (`results/real_pools_<ds>.npz`).
-- `real_experiments.py` — E1/E2/E3.  `e4_stage2_vpvr.py` — measured VP/VR Stage-2 (MNIST).
-- `e5_drift.py` — drift/robustness.  `fault_breakdown.py` — fault-effect breakdown (+ per-fault framework).
-- `make_report.py` — tables + figures.  `stats_support.py` — CIs.  `verify_all.py` — sanity checks.
 
-Outputs land in `results/` (pools cache, `figures/`, `tables/`, `real_summary_all.json`).
+- `config.py` — resolves the artifacts path (`SNN_ARTIFACTS`) and the `results/` dir.
+- `src/` — `detectors.py` (CUSUM/EWMA + ARL calibration), `eval_utils.py` (AUROC),
+  `metrics_cost.py` (S/(1+pS) cost model), `realdata.py` (residual-stream loader).
+- `real_experiments.py` — E1 / E2 / E3.
+- `run_stage2_datasets.py` — Stage-2 VP/VR for all three datasets (Table V).
+- `e4_stage2_vpvr.py` — MNIST-only Stage-2 (full-schema, used by `stats_support.py`).
+- `e5_drift.py`, `fault_breakdown.py`, `stats_support.py`, `make_report.py`.
+- `build_pools.py` — raw spikes → per-neuron residual pools.
+- `results/` — cached pools, result JSONs, `tables/`, `figures/`.
