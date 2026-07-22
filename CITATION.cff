@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "Cheap First, Expensive on Demand (reproduction code)"
+abstract: >-
+  Model-free CUSUM screening plus on-demand Victor-Purpura / van Rossum
+  spike-distance confirmation for concurrent testing of spiking neuromorphic
+  hardware (QUANTISENC), built on the hierarchical model-based EDI scheme.
+authors:
+  - family-names: Kumar
+    given-names: Suman
+  - family-names: Mishra
+    given-names: Abhishek
+  - family-names: Das
+    given-names: Anup
+  - family-names: Kandasamy
+    given-names: Nagarajan
+repository-code: "https://github.com/SumanKumar8/cheap-first-expensive-on-demand"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "Cheap First, Expensive on Demand: Model-Free Screening and On-Demand Spike-Distance Confirmation for Concurrent Testing of Spiking Neuromorphic Hardware"
+  authors:
+    - family-names: Kumar
+      given-names: Suman
+    - family-names: Mishra
+      given-names: Abhishek
+    - family-names: Das
+      given-names: Anup
+    - family-names: Kandasamy
+      given-names: Nagarajan
+  conference:
+    name: "Asia and South Pacific Design Automation Conference (ASP-DAC)"
+  year: 2027
