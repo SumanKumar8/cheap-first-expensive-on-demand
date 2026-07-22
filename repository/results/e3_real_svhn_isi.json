@@ -1,0 +1,16 @@
+{
+  "dataset": "svhn",
+  "metric": "isi",
+  "residual": "raw",
+  "N": 800,
+  "n_faulty": 404,
+  "flag_rate": 0.0903,
+  "flag_rate_once": 0.0068,
+  "stage1_recall": 1.0,
+  "cascade_recall": 0.953,
+  "mean_latency": 2.392,
+  "false_escalation_rate": 0.00418,
+  "savings_vs_vp": 6.37,
+  "savings_once": 13.62,
+  "crossover_pstar": 0.9333
+}

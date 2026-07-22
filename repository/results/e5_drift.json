@@ -1,0 +1,46 @@
+{
+  "in_control_noise_n": 10000,
+  "K": 0.5,
+  "L": 300,
+  "target_ARL0": 200.0,
+  "fixed_threshold": 8.818,
+  "adaptive_threshold": 8.714,
+  "study1_drift": {
+    "drift_levels": [
+      0.0,
+      1.5,
+      3.0
+    ],
+    "fixed_ARL0": [
+      191.9,
+      117.9,
+      77.1
+    ],
+    "adaptive_ARL0": [
+      194.1,
+      195.6,
+      190.2
+    ],
+    "fixed_recall_faulty": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "adaptive_recall_faulty": [
+      0.923,
+      0.987,
+      0.999
+    ]
+  },
+  "study2_transfer": {
+    "target_ARL0": 200.0,
+    "calibrate_on_classes0to4_apply_to_5to9": {
+      "ARL0": 179.3,
+      "ARL1": 150.53
+    },
+    "in_distribution_5to9": {
+      "ARL0": 204.8,
+      "ARL1": 180.93
+    }
+  }
+}

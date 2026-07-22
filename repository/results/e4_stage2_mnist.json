@@ -1,0 +1,32 @@
+{
+  "dataset": "MNIST",
+  "provenance": "measured (real paired outputs)",
+  "n_windows": 10000,
+  "n_images": 1000,
+  "n_neurons": 10,
+  "affected_pct": 16.35,
+  "n_affected": 1635,
+  "vp_auroc": 1.0,
+  "vr_auroc": 1.0,
+  "vp_mean_affected": 3.747,
+  "vp_mean_unaffected": 0.0,
+  "confirmation_pct": 96.64,
+  "confirmation_CI": [
+    95.6,
+    97.4
+  ],
+  "false_confirmation_pct": 0.0,
+  "false_confirmation_CI": [
+    0,
+    0.05
+  ],
+  "missed_confirmation_pct": 3.36,
+  "distortion_missing_pct": 2.9,
+  "distortion_spurious_pct": 2.3,
+  "distortion_timing_pct": 94.7,
+  "stage1_flagged_falsealarm": 16,
+  "stage2_falsealarm_rejection_pct": 100.0,
+  "vp_us_per_window": 52.56,
+  "cheap_us_per_window": 1.694,
+  "vp_over_cheap": 31.0
+}

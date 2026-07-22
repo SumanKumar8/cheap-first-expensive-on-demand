@@ -1,0 +1,16 @@
+{
+  "dataset": "mnist",
+  "metric": "isi",
+  "residual": "raw",
+  "N": 800,
+  "n_faulty": 404,
+  "flag_rate": 0.1313,
+  "flag_rate_once": 0.0066,
+  "stage1_recall": 1.0,
+  "cascade_recall": 0.953,
+  "mean_latency": 1.421,
+  "false_escalation_rate": 0.00343,
+  "savings_vs_vp": 5.05,
+  "savings_once": 13.66,
+  "crossover_pstar": 0.9333
+}

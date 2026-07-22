@@ -1,0 +1,14 @@
+{
+  "isi": {
+    "auroc_raw": 1.0,
+    "auroc_lin": 0.9998,
+    "auroc_ml": 1.0,
+    "gain_ml_minus_raw": 0.0
+  },
+  "cv": {
+    "auroc_raw": 1.0,
+    "auroc_lin": 1.0,
+    "auroc_ml": 1.0,
+    "gain_ml_minus_raw": 0.0
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "sample_sizes": {
+    "E1 detector comparison": "per detector: 2000 faulty + 2000 in-control episodes (L=100); latency from 3500 fault-from-0 streams",
+    "E3 cascade (per dataset/metric)": "N=800 monitored-neuron streams (404 faulty, 396 in-control), L=100",
+    "E4 VP/VR Stage-2 (MNIST)": "10000 neuron-windows (1000 images x 10 neurons); 1635 fault-affected, 8365 unaffected",
+    "E5 drift/robustness": "10000 real in-control noise samples; 1500-2000 streams per condition (L=300)"
+  },
+  "ci_table": [
+    [
+      "Claim",
+      "estimate",
+      "n",
+      "95% CI"
+    ],
+    [
+      "E3 stage-1 recall (MNIST muISI)",
+      "1.000",
+      404,
+      "(0.9906, 1)"
+    ],
+    [
+      "E3 cascade recall (MNIST muISI)",
+      "0.953",
+      404,
+      "(0.9277, 0.9697)"
+    ],
+    [
+      "E4 VP confirmation accuracy",
+      "0.966",
+      1635,
+      "(0.9565, 0.9741)"
+    ],
+    [
+      "E4 VP false confirmation",
+      "0.000",
+      8365,
+      "(0, 0.0005)"
+    ],
+    [
+      "E4 VP/VR AU-ROC (affected)",
+      "1.000",
+      10000,
+      "rule-of-3: >=0.9996 (0 errors)"
+    ],
+    [
+      "E1 CUSUM AU-ROC (per dataset)",
+      "1.000",
+      "2000+2000",
+      "rule-of-3: error<=3/2000=0.0015 -> AUROC>=0.9985"
+    ]
+  ]
+}

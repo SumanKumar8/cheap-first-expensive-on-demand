@@ -1,0 +1,32 @@
+{
+  "per-window threshold, raw residual (Paper 1)": {
+    "auroc": 0.9278,
+    "tpr_at_1pct_fpr": 0.8511,
+    "latency_windows": 24.16
+  },
+  "CUSUM, raw residual": {
+    "auroc": 1.0,
+    "tpr_at_1pct_fpr": 0.9996,
+    "latency_windows": 3.42
+  },
+  "EWMA, raw residual": {
+    "auroc": 0.9986,
+    "tpr_at_1pct_fpr": 0.9755,
+    "latency_windows": 3.31
+  },
+  "per-window threshold, ML residual (Paper 1 deployed)": {
+    "auroc": 0.9727,
+    "tpr_at_1pct_fpr": 0.85,
+    "latency_windows": 6.16
+  },
+  "residual-CUSUM, linear conditioner": {
+    "auroc": 0.9983,
+    "tpr_at_1pct_fpr": 0.9625,
+    "latency_windows": 3.81
+  },
+  "CUSUM, ML residual": {
+    "auroc": 1.0,
+    "tpr_at_1pct_fpr": 1.0,
+    "latency_windows": 2.33
+  }
+}

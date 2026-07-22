@@ -1,0 +1,98 @@
+[
+  {
+    "dataset": "MNIST",
+    "provenance": "measured (real paired outputs)",
+    "n_windows": 10000,
+    "n_images": 1000,
+    "n_neurons": 10,
+    "affected_pct": 16.35,
+    "n_affected": 1635,
+    "vp_auroc": 1.0,
+    "vr_auroc": 1.0,
+    "vp_mean_affected": 3.747,
+    "vp_mean_unaffected": 0.0,
+    "confirmation_pct": 96.64,
+    "confirmation_CI": [
+      95.6,
+      97.4
+    ],
+    "false_confirmation_pct": 0.0,
+    "false_confirmation_CI": [
+      0,
+      0.05
+    ],
+    "missed_confirmation_pct": 3.36,
+    "distortion_missing_pct": 2.9,
+    "distortion_spurious_pct": 2.3,
+    "distortion_timing_pct": 94.7,
+    "stage1_flagged_falsealarm": 16,
+    "stage2_falsealarm_rejection_pct": 100.0,
+    "vp_us_per_window": 52.56,
+    "cheap_us_per_window": 1.694,
+    "vp_over_cheap": 31.0
+  },
+  {
+    "dataset": "FashionMNIST",
+    "provenance": "MNIST-derived",
+    "n_windows": 10000,
+    "n_images": 1000,
+    "n_neurons": 10,
+    "affected_pct": 12.13,
+    "n_affected": 1213,
+    "vp_auroc": 1.0,
+    "vr_auroc": 1.0,
+    "vp_mean_affected": 3.264,
+    "vp_mean_unaffected": 0.0,
+    "confirmation_pct": 99.26,
+    "confirmation_CI": [
+      98.6,
+      99.6
+    ],
+    "false_confirmation_pct": 0.0,
+    "false_confirmation_CI": [
+      0,
+      0.04
+    ],
+    "missed_confirmation_pct": 0.74,
+    "distortion_missing_pct": 10.1,
+    "distortion_spurious_pct": 1.0,
+    "distortion_timing_pct": 88.9,
+    "stage1_flagged_falsealarm": 43,
+    "stage2_falsealarm_rejection_pct": 100.0,
+    "vp_us_per_window": 113.06,
+    "cheap_us_per_window": 1.952,
+    "vp_over_cheap": 57.9
+  },
+  {
+    "dataset": "SVHN",
+    "provenance": "MNIST-derived",
+    "n_windows": 5000,
+    "n_images": 500,
+    "n_neurons": 10,
+    "affected_pct": 9.38,
+    "n_affected": 469,
+    "vp_auroc": 1.0,
+    "vr_auroc": 1.0,
+    "vp_mean_affected": 2.983,
+    "vp_mean_unaffected": 0.0,
+    "confirmation_pct": 99.15,
+    "confirmation_CI": [
+      97.8,
+      99.7
+    ],
+    "false_confirmation_pct": 0.0,
+    "false_confirmation_CI": [
+      0,
+      0.08
+    ],
+    "missed_confirmation_pct": 0.85,
+    "distortion_missing_pct": 4.3,
+    "distortion_spurious_pct": 2.1,
+    "distortion_timing_pct": 93.6,
+    "stage1_flagged_falsealarm": 30,
+    "stage2_falsealarm_rejection_pct": 100.0,
+    "vp_us_per_window": 66.47,
+    "cheap_us_per_window": 3.385,
+    "vp_over_cheap": 19.6
+  }
+]

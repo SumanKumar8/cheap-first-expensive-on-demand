@@ -1,0 +1,581 @@
+{
+ "datasets": [
+  "fashionmnist",
+  "mnist",
+  "svhn"
+ ],
+ "e1": {
+  "fashionmnist": {
+   "isi": {
+    "per-window threshold, raw residual (Paper 1)": {
+     "auroc": 0.9278,
+     "tpr_at_1pct_fpr": 0.8511,
+     "latency_windows": 24.16
+    },
+    "CUSUM, raw residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 0.9996,
+     "latency_windows": 3.42
+    },
+    "EWMA, raw residual": {
+     "auroc": 0.9986,
+     "tpr_at_1pct_fpr": 0.9755,
+     "latency_windows": 3.31
+    },
+    "per-window threshold, ML residual (Paper 1 deployed)": {
+     "auroc": 0.9727,
+     "tpr_at_1pct_fpr": 0.85,
+     "latency_windows": 6.16
+    },
+    "residual-CUSUM, linear conditioner": {
+     "auroc": 0.9983,
+     "tpr_at_1pct_fpr": 0.9625,
+     "latency_windows": 3.81
+    },
+    "CUSUM, ML residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 2.33
+    }
+   },
+   "cv": {
+    "per-window threshold, raw residual (Paper 1)": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.13
+    },
+    "CUSUM, raw residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.15
+    },
+    "EWMA, raw residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.15
+    },
+    "per-window threshold, ML residual (Paper 1 deployed)": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.13
+    },
+    "residual-CUSUM, linear conditioner": {
+     "auroc": 0.9997,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.16
+    },
+    "CUSUM, ML residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.15
+    }
+   }
+  },
+  "mnist": {
+   "isi": {
+    "per-window threshold, raw residual (Paper 1)": {
+     "auroc": 0.9585,
+     "tpr_at_1pct_fpr": 0.8726,
+     "latency_windows": 14.2
+    },
+    "CUSUM, raw residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 2.51
+    },
+    "EWMA, raw residual": {
+     "auroc": 0.9998,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 2.45
+    },
+    "per-window threshold, ML residual (Paper 1 deployed)": {
+     "auroc": 0.9817,
+     "tpr_at_1pct_fpr": 0.9435,
+     "latency_windows": 2.46
+    },
+    "residual-CUSUM, linear conditioner": {
+     "auroc": 0.9998,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 2.19
+    },
+    "CUSUM, ML residual": {
+     "auroc": 0.9995,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.93
+    }
+   },
+   "cv": {
+    "per-window threshold, raw residual (Paper 1)": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.11
+    },
+    "CUSUM, raw residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.13
+    },
+    "EWMA, raw residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.13
+    },
+    "per-window threshold, ML residual (Paper 1 deployed)": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.11
+    },
+    "residual-CUSUM, linear conditioner": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.19
+    },
+    "CUSUM, ML residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.13
+    }
+   }
+  },
+  "svhn": {
+   "isi": {
+    "per-window threshold, raw residual (Paper 1)": {
+     "auroc": 0.9855,
+     "tpr_at_1pct_fpr": 0.9799,
+     "latency_windows": 7.61
+    },
+    "CUSUM, raw residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 3.71
+    },
+    "EWMA, raw residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 3.64
+    },
+    "per-window threshold, ML residual (Paper 1 deployed)": {
+     "auroc": 0.9943,
+     "tpr_at_1pct_fpr": 0.988,
+     "latency_windows": 6.2
+    },
+    "residual-CUSUM, linear conditioner": {
+     "auroc": 0.9998,
+     "tpr_at_1pct_fpr": 0.994,
+     "latency_windows": 5.41
+    },
+    "CUSUM, ML residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 3.5
+    }
+   },
+   "cv": {
+    "per-window threshold, raw residual (Paper 1)": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.59
+    },
+    "CUSUM, raw residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.94
+    },
+    "EWMA, raw residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.95
+    },
+    "per-window threshold, ML residual (Paper 1 deployed)": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.6
+    },
+    "residual-CUSUM, linear conditioner": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 2.37
+    },
+    "CUSUM, ML residual": {
+     "auroc": 1.0,
+     "tpr_at_1pct_fpr": 1.0,
+     "latency_windows": 1.94
+    }
+   }
+  }
+ },
+ "e1_head": {
+  "fashionmnist": {
+   "isi": {
+    "pw_auroc": 0.9278,
+    "pw_lat": 24.16,
+    "cusum_auroc": 1.0,
+    "cusum_lat": 3.42,
+    "speedup": 7.06,
+    "cond_gain": 0.0
+   },
+   "cv": {
+    "pw_auroc": 1.0,
+    "pw_lat": 1.13,
+    "cusum_auroc": 1.0,
+    "cusum_lat": 1.15,
+    "speedup": 0.98,
+    "cond_gain": 0.0
+   }
+  },
+  "mnist": {
+   "isi": {
+    "pw_auroc": 0.9585,
+    "pw_lat": 14.2,
+    "cusum_auroc": 1.0,
+    "cusum_lat": 2.51,
+    "speedup": 5.66,
+    "cond_gain": -0.0
+   },
+   "cv": {
+    "pw_auroc": 1.0,
+    "pw_lat": 1.11,
+    "cusum_auroc": 1.0,
+    "cusum_lat": 1.13,
+    "speedup": 0.98,
+    "cond_gain": 0.0
+   }
+  },
+  "svhn": {
+   "isi": {
+    "pw_auroc": 0.9855,
+    "pw_lat": 7.61,
+    "cusum_auroc": 1.0,
+    "cusum_lat": 3.71,
+    "speedup": 2.05,
+    "cond_gain": 0.0
+   },
+   "cv": {
+    "pw_auroc": 1.0,
+    "pw_lat": 1.59,
+    "cusum_auroc": 1.0,
+    "cusum_lat": 1.94,
+    "speedup": 0.82,
+    "cond_gain": 0.0
+   }
+  }
+ },
+ "e2": {
+  "fashionmnist": {
+   "isi": {
+    "auroc_raw": 1.0,
+    "auroc_lin": 0.9983,
+    "auroc_ml": 1.0,
+    "gain_ml_minus_raw": 0.0
+   },
+   "cv": {
+    "auroc_raw": 1.0,
+    "auroc_lin": 0.9997,
+    "auroc_ml": 1.0,
+    "gain_ml_minus_raw": 0.0
+   }
+  },
+  "mnist": {
+   "isi": {
+    "auroc_raw": 1.0,
+    "auroc_lin": 0.9998,
+    "auroc_ml": 0.9995,
+    "gain_ml_minus_raw": -0.0005
+   },
+   "cv": {
+    "auroc_raw": 1.0,
+    "auroc_lin": 1.0,
+    "auroc_ml": 1.0,
+    "gain_ml_minus_raw": 0.0
+   }
+  },
+  "svhn": {
+   "isi": {
+    "auroc_raw": 1.0,
+    "auroc_lin": 0.9998,
+    "auroc_ml": 1.0,
+    "gain_ml_minus_raw": 0.0
+   },
+   "cv": {
+    "auroc_raw": 1.0,
+    "auroc_lin": 1.0,
+    "auroc_ml": 1.0,
+    "gain_ml_minus_raw": 0.0
+   }
+  }
+ },
+ "e3": {
+  "fashionmnist": {
+   "isi": {
+    "dataset": "fashionmnist",
+    "metric": "isi",
+    "residual": "raw",
+    "N": 800,
+    "n_faulty": 404,
+    "flag_rate": 0.128,
+    "flag_rate_once": 0.0066,
+    "stage1_recall": 1.0,
+    "cascade_recall": 0.953,
+    "mean_latency": 2.249,
+    "false_escalation_rate": 0.00404,
+    "savings_vs_vp": 5.14,
+    "savings_once": 13.65,
+    "crossover_pstar": 0.9333
+   },
+   "cv": {
+    "dataset": "fashionmnist",
+    "metric": "cv",
+    "residual": "raw",
+    "N": 800,
+    "n_faulty": 404,
+    "flag_rate": 0.2806,
+    "flag_rate_once": 0.0069,
+    "stage1_recall": 1.0,
+    "cascade_recall": 0.953,
+    "mean_latency": 0.145,
+    "false_escalation_rate": 0.00446,
+    "savings_vs_vp": 2.88,
+    "savings_once": 13.6,
+    "crossover_pstar": 0.9333
+   }
+  },
+  "mnist": {
+   "isi": {
+    "dataset": "mnist",
+    "metric": "isi",
+    "residual": "raw",
+    "N": 800,
+    "n_faulty": 404,
+    "flag_rate": 0.1313,
+    "flag_rate_once": 0.0066,
+    "stage1_recall": 1.0,
+    "cascade_recall": 0.953,
+    "mean_latency": 1.421,
+    "false_escalation_rate": 0.00343,
+    "savings_vs_vp": 5.05,
+    "savings_once": 13.66,
+    "crossover_pstar": 0.9333
+   },
+   "cv": {
+    "dataset": "mnist",
+    "metric": "cv",
+    "residual": "raw",
+    "N": 800,
+    "n_faulty": 404,
+    "flag_rate": 0.2826,
+    "flag_rate_once": 0.0066,
+    "stage1_recall": 1.0,
+    "cascade_recall": 0.953,
+    "mean_latency": 0.156,
+    "false_escalation_rate": 0.0038,
+    "savings_vs_vp": 2.86,
+    "savings_once": 13.64,
+    "crossover_pstar": 0.9333
+   }
+  },
+  "svhn": {
+   "isi": {
+    "dataset": "svhn",
+    "metric": "isi",
+    "residual": "raw",
+    "N": 800,
+    "n_faulty": 404,
+    "flag_rate": 0.0903,
+    "flag_rate_once": 0.0068,
+    "stage1_recall": 1.0,
+    "cascade_recall": 0.953,
+    "mean_latency": 2.392,
+    "false_escalation_rate": 0.00418,
+    "savings_vs_vp": 6.37,
+    "savings_once": 13.62,
+    "crossover_pstar": 0.9333
+   },
+   "cv": {
+    "dataset": "svhn",
+    "metric": "cv",
+    "residual": "raw",
+    "N": 800,
+    "n_faulty": 404,
+    "flag_rate": 0.2129,
+    "flag_rate_once": 0.0068,
+    "stage1_recall": 1.0,
+    "cascade_recall": 0.953,
+    "mean_latency": 0.696,
+    "false_escalation_rate": 0.00416,
+    "savings_vs_vp": 3.58,
+    "savings_once": 13.61,
+    "crossover_pstar": 0.9333
+   }
+  }
+ },
+ "golden": {
+  "fashionmnist": {
+   "isi": {
+    "mine": [
+     0.7274,
+     1.1536,
+     1.7058,
+     2.6436,
+     2.6706,
+     0.1155,
+     1.2443,
+     0.1274,
+     0.994,
+     0.3004
+    ],
+    "shipped": [
+     0.7193,
+     1.0538,
+     1.5586,
+     2.6261,
+     2.6886,
+     0.1161,
+     1.2188,
+     0.1201,
+     0.9122,
+     0.2819
+    ],
+    "mean_rel_err": 0.0456
+   },
+   "cv": {
+    "mine": [
+     0.0182,
+     0.0265,
+     0.0358,
+     0.0355,
+     0.0305,
+     0.0112,
+     0.038,
+     0.0139,
+     0.0237,
+     0.0188
+    ],
+    "shipped": [
+     0.0181,
+     0.0272,
+     0.0354,
+     0.036,
+     0.0325,
+     0.0112,
+     0.0391,
+     0.0144,
+     0.0242,
+     0.0185
+    ],
+    "mean_rel_err": 0.0219
+   }
+  },
+  "mnist": {
+   "isi": {
+    "mine": [
+     0.4796,
+     0.4387,
+     0.5082,
+     0.6779,
+     0.836,
+     0.4863,
+     0.4273,
+     0.6603,
+     1.1783,
+     4.6397
+    ],
+    "shipped": [
+     0.4907,
+     0.4347,
+     0.467,
+     0.6504,
+     0.8697,
+     0.5242,
+     0.408,
+     0.6179,
+     1.1644,
+     4.6228
+    ],
+    "mean_rel_err": 0.0405
+   },
+   "cv": {
+    "mine": [
+     0.0112,
+     0.0136,
+     0.011,
+     0.0146,
+     0.0175,
+     0.0126,
+     0.0107,
+     0.015,
+     0.019,
+     0.0624
+    ],
+    "shipped": [
+     0.0114,
+     0.0138,
+     0.0108,
+     0.0146,
+     0.0178,
+     0.0125,
+     0.0106,
+     0.0148,
+     0.018,
+     0.0656
+    ],
+    "mean_rel_err": 0.0207
+   }
+  },
+  "svhn": {
+   "isi": {
+    "mine": [
+     1.8444,
+     1.8228,
+     1.7565,
+     1.6453,
+     1.6464,
+     1.3964,
+     1.4089,
+     1.6257,
+     1.7548,
+     1.8033
+    ],
+    "shipped": [
+     1.9804,
+     1.8147,
+     1.6537,
+     1.6765,
+     1.7454,
+     1.3674,
+     1.4827,
+     1.5651,
+     1.5466,
+     1.6615
+    ],
+    "mean_rel_err": 0.054
+   },
+   "cv": {
+    "mine": [
+     0.0524,
+     0.054,
+     0.0568,
+     0.0491,
+     0.046,
+     0.0456,
+     0.0521,
+     0.0499,
+     0.0578,
+     0.0515
+    ],
+    "shipped": [
+     0.0524,
+     0.0535,
+     0.0556,
+     0.0474,
+     0.0435,
+     0.0487,
+     0.0522,
+     0.0506,
+     0.0572,
+     0.0534
+    ],
+    "mean_rel_err": 0.0253
+   }
+  }
+ }
+}

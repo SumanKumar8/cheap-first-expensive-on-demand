@@ -1,0 +1,32 @@
+{
+  "dataset": "SVHN",
+  "provenance": "MNIST-derived",
+  "n_windows": 5000,
+  "n_images": 500,
+  "n_neurons": 10,
+  "affected_pct": 9.38,
+  "n_affected": 469,
+  "vp_auroc": 1.0,
+  "vr_auroc": 1.0,
+  "vp_mean_affected": 2.983,
+  "vp_mean_unaffected": 0.0,
+  "confirmation_pct": 99.15,
+  "confirmation_CI": [
+    97.8,
+    99.7
+  ],
+  "false_confirmation_pct": 0.0,
+  "false_confirmation_CI": [
+    0,
+    0.08
+  ],
+  "missed_confirmation_pct": 0.85,
+  "distortion_missing_pct": 4.3,
+  "distortion_spurious_pct": 2.1,
+  "distortion_timing_pct": 93.6,
+  "stage1_flagged_falsealarm": 30,
+  "stage2_falsealarm_rejection_pct": 100.0,
+  "vp_us_per_window": 66.47,
+  "cheap_us_per_window": 3.385,
+  "vp_over_cheap": 19.6
+}

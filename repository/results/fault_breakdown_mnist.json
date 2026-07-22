@@ -1,0 +1,93 @@
+{
+  "mode": "derivable_single_injected_config",
+  "dataset": "mnist",
+  "n_images": 1000,
+  "n_neurons": 10,
+  "total_affected_windows": 1635,
+  "missing_pct": 55.9,
+  "spurious_pct": 34.6,
+  "timing_pct": 9.5,
+  "per_neuron": {
+    "0": {
+      "affected": 97,
+      "affected_pct": 9.7,
+      "missing": 48,
+      "spurious": 38,
+      "timing": 11,
+      "mean_VP": 3.891
+    },
+    "1": {
+      "affected": 185,
+      "affected_pct": 18.5,
+      "missing": 177,
+      "spurious": 5,
+      "timing": 3,
+      "mean_VP": 4.575
+    },
+    "2": {
+      "affected": 214,
+      "affected_pct": 21.4,
+      "missing": 45,
+      "spurious": 147,
+      "timing": 22,
+      "mean_VP": 3.329
+    },
+    "3": {
+      "affected": 256,
+      "affected_pct": 25.6,
+      "missing": 240,
+      "spurious": 4,
+      "timing": 12,
+      "mean_VP": 3.963
+    },
+    "4": {
+      "affected": 143,
+      "affected_pct": 14.3,
+      "missing": 119,
+      "spurious": 6,
+      "timing": 18,
+      "mean_VP": 3.571
+    },
+    "5": {
+      "affected": 227,
+      "affected_pct": 22.7,
+      "missing": 123,
+      "spurious": 76,
+      "timing": 28,
+      "mean_VP": 3.503
+    },
+    "6": {
+      "affected": 122,
+      "affected_pct": 12.2,
+      "missing": 1,
+      "spurious": 113,
+      "timing": 8,
+      "mean_VP": 5.398
+    },
+    "7": {
+      "affected": 188,
+      "affected_pct": 18.8,
+      "missing": 47,
+      "spurious": 130,
+      "timing": 11,
+      "mean_VP": 4.05
+    },
+    "8": {
+      "affected": 134,
+      "affected_pct": 13.4,
+      "missing": 57,
+      "spurious": 45,
+      "timing": 32,
+      "mean_VP": 2.116
+    },
+    "9": {
+      "affected": 69,
+      "affected_pct": 6.9,
+      "missing": 57,
+      "spurious": 1,
+      "timing": 11,
+      "mean_VP": 2.407
+    }
+  },
+  "note": "FS1/FS2/FS3, stuck-at type and bit position are injection parameters not recoverable from a single aggregate output file; run 'perfault' mode on the per-fault dataset for that breakdown."
+}

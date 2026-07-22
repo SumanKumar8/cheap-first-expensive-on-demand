@@ -1,0 +1,16 @@
+{
+  "dataset": "fashionmnist",
+  "metric": "cv",
+  "residual": "raw",
+  "N": 800,
+  "n_faulty": 404,
+  "flag_rate": 0.2806,
+  "flag_rate_once": 0.0069,
+  "stage1_recall": 1.0,
+  "cascade_recall": 0.953,
+  "mean_latency": 0.145,
+  "false_escalation_rate": 0.00446,
+  "savings_vs_vp": 2.88,
+  "savings_once": 13.6,
+  "crossover_pstar": 0.9333
+}
